@@ -1,0 +1,33 @@
+2.	Создать предикат, вычисляющий по натуральному числу N сумму чисел от 1 до N. 
+
+% Damir Shaikhattarov
+
+implement main
+    open core, console
+
+class predicates
+    pred : (integer, integer [out]).
+clauses
+    pred(0, 0) :-
+        !.
+
+    pred(N, S) :-
+        pred(N - 1, X),
+        S = N + X.
+
+clauses
+    run() :-
+        init(),
+        write("N = "),
+        N = read(),
+        pred(N, S),
+        write("Summ = ", S),
+        _ = readLine(),
+        nl,
+        write("End, please press 'enter' to exit..."),
+        _ = readLine().
+
+end implement main
+
+goal
+    console::run(main::run).
