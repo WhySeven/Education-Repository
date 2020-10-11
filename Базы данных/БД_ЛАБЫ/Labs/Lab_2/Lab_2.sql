@@ -1,6 +1,7 @@
 Drop Table Doctors;
+
 Create Table Doctors (
-	
+	id int not null IDENTITY(1,1), 
     Full_Name nchar(30) not null,
     Specialty nchar(30) not null,
 	Office_Number smallint not null,
@@ -28,13 +29,19 @@ Values
 ('Алексеева Т.П.',		'Врач-терапевт участковый',		'108',		'3',	'0','0','1','1','1','0','0',	'08:00','13:00'),
 ('Жиркова А.Е',			'Врач-терапевт участковый',		'109',		'3',	'1','1','1','1','1','0','0',	'08:00','13:00'),
 ('Огородникова Л.Н.',	'Врач-терапевт участковый',		'110',		'3',	'0','0','0','0','0','0','0',	'00:00','00:00');
+
 Select* from "Doctors";
 Delete from "Doctors";
-Drop Table Пациенты;
-Create Table Пациенты (
-	id int,
-    ФИО nchar(30),
-    Болезнь nchar(30),
-	Адрес nchar(50),
-    Дата_Поступления date
+
+Drop Table Pacients;
+
+Create Table Pacients (
+	id int not null IDENTITY(1,1), 
+    Full_Name nchar(30),
+    Disease nchar(30),
+	Patient_Address nchar(50),
+    Admitted_Day date
 );
+Insert into
+"Pacients" ("Full_Name","Disease","Patient_Address","Admitted_Day")
+Values('Èâàíîâ È.È.', 'ÎÐÂÈ', 'ã.Àíèìå, ä.×àéíûé','10.10.2020');
